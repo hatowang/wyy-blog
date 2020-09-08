@@ -11,5 +11,5 @@ $git clone https://github.com/xxx/xxxxxxx.git --depth 1
 $git clone -b remote_branch_name https://github.com/xxx/xxxxxxx.git --depth 1 
 或者使用以下命令切换分支：
 $git remote set-branches origin 'remote_branch_name'
-$ git fetch --depth 1 origin remote_branch_name
-$ git checkout remote_branch_name
+$git fetch --depth 1 origin remote_branch_name
+$git checkout remote_branch_name

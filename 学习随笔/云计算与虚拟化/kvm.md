@@ -16,3 +16,17 @@ KVM和QEMU-KVM交互
 - QEMU-KVM是kvm团队针对qemu的改善和二次开发的一套工具
 - /dev/kvm是kvm内核模块提供给用户空间的一个接口，这个接口被qemu-kvm调用，通过ioctl系统调用给用户提供删除、创建、管理虚机的工具
 - qemu-kvm就是通过open()、close()、ioctl()，等方法去打开，关闭和调用这个接口，实现跟KVM的互动
+
+[qemu-kvm 调用kvm的过程](picture/qemu-kvm调用kvn.png)
+- 打开/dev/kvm设备
+- 通过KVM_CREATE_VM创建一个虚拟机对象
+- 通过KVM_CREATE_VCPU为虚机创建VCPU对象
+- 通过KVM_RUN设置VCPU运行起来
+
+
+搭建KVM
+- 确认硬件服务器是否支持
+ egrep 'svm|vmx' /proc/cpuinfo
+- 安装包准备，yum源配置
+- yum安装
+- 创建vm
